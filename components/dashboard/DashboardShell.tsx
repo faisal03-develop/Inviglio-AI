@@ -15,7 +15,7 @@ function DashboardShellComponent() {
 
   return (
     <main className={styles.root}>
-      <Sidebar items={sidebarItems} />
+      <Sidebar items={sidebarItems} activeItemId="dashboard" />
       <div className={styles.contentWrap}>
         <TopBar />
         <section className={styles.mainGrid}>
