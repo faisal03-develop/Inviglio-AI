@@ -1,20 +1,19 @@
-import { SignOutButton } from "@clerk/nextjs";
 import type { SidebarItem } from "@/constants/dashboard";
 import styles from "@/styles/dashboard.module.css";
+import { getInitials } from "@/utils/dashboard";
 
 type SidebarProps = {
   items: SidebarItem[];
 };
 
 export function Sidebar({ items }: SidebarProps) {
+  const operatorName = "Alex Mercer";
+
   return (
     <aside className={styles.sidebar}>
       <div className={styles.brandBlock}>
-        <div className={styles.shield}>◍</div>
-        <div>
-          <p className={styles.brandTitle}>Inviglio AI</p>
-          <p className={styles.brandSubTitle}>Zone Alpha-7</p>
-        </div>
+        <p className={styles.brandTitle}>SENTINEL</p>
+        <p className={styles.brandSubTitle}>SECURITY CORE</p>
       </div>
 
       <nav className={styles.navList} aria-label="Primary">
@@ -30,14 +29,12 @@ export function Sidebar({ items }: SidebarProps) {
         ))}
       </nav>
 
-      <div className={styles.sidebarActions}>
-        <button type="button" className={styles.incidentButton}>
-          + New Incident Report
-        </button>
-        <button type="button" className={styles.secondaryAction}>
-          Support
-        </button>
-        <SignOutButton><button type="button" className={styles.secondaryAction}>Logout</button></SignOutButton>
+      <div className={styles.profileFooter}>
+        <div className={styles.profileAvatar}>{getInitials(operatorName)}</div>
+        <div>
+          <p className={styles.profileName}>{operatorName}</p>
+          <p className={styles.profileRole}>Chief Operator</p>
+        </div>
       </div>
     </aside>
   );

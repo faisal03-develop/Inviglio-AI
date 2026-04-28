@@ -11,97 +11,97 @@
   background: linear-gradient(180deg, #07090f 0%, #04060a 100%);
   display: flex;
   flex-direction: column;
+  padding: 38px 18px 20px;
 }
 
 .brandBlock {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  padding: 22px 18px;
-  border-bottom: 1px solid #1a2030;
-}
-
-.shield {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  border: 1px solid #3d4c70;
-  display: grid;
-  place-items: center;
-  font-size: 12px;
-  color: #99abcc;
+  padding: 6px 6px 24px;
+  border-bottom: 1px solid #19202d;
 }
 
 .brandTitle {
   margin: 0;
+  font-size: 32px;
   font-weight: 700;
-  letter-spacing: 0.02em;
+  color: #78acff;
 }
 
 .brandSubTitle {
-  margin: 4px 0 0;
+  margin: 6px 0 0;
   font-size: 12px;
-  color: #8b93a7;
+  letter-spacing: 0.14em;
+  color: #8b8f99;
 }
 
 .navList {
   display: flex;
   flex-direction: column;
-  padding: 12px 0;
+  gap: 8px;
+  padding: 22px 0 0;
 }
 
 .navItem {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   padding: 12px 16px;
   color: #8e98af;
-  text-transform: uppercase;
-  font-size: 11px;
-  letter-spacing: 0.12em;
+  font-size: 16px;
+  border-radius: 16px;
   border: none;
   background: transparent;
   text-align: left;
 }
 
 .navIcon {
-  color: #7989ab;
-  font-size: 12px;
+  color: #9aa6bf;
+  font-size: 17px;
+  width: 24px;
+  display: inline-grid;
+  place-items: center;
 }
 
 .navItemActive {
-  color: #e7eeff;
-  background: linear-gradient(90deg, #0f3f76 0%, #0b2950 70%, transparent 100%);
-  border-left: 3px solid #56a3ff;
+  color: #8dc4ff;
+  font-weight: 600;
+  background: linear-gradient(180deg, #0b1018 0%, #060b14 100%);
+  border: 1px solid #163867;
+  box-shadow: 0 0 18px #0b3e89a1 inset;
 }
 
-.sidebarActions {
+.profileFooter {
   margin-top: auto;
-  padding: 14px 14px 18px;
-  display: grid;
-  gap: 10px;
+  border-top: 1px solid #19202d;
+  padding: 20px 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.incidentButton {
-  border-radius: 8px;
-  border: 1px solid #6076a4;
-  color: #d7e5ff;
-  background: #90b9ff1f;
-  padding: 10px 12px;
-  font-size: 12px;
+.profileAvatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid #395579;
+  background: radial-gradient(circle at 30% 30%, #2f4f7d 0%, #0b1320 70%);
+  color: #d8e6ff;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.profileName {
+  margin: 0;
+  font-size: 16px;
+  color: #f3f6ff;
   font-weight: 600;
 }
 
-.secondaryAction {
-  border: none;
-  border-radius: 8px;
-  background: transparent;
-  color: #808aa3;
-  text-transform: uppercase;
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  text-align: left;
-  padding: 8px;
+.profileRole {
+  margin: 2px 0 0;
+  color: #8994ab;
+  font-size: 12px;
 }
 
 .contentWrap {
@@ -499,27 +499,30 @@
   .brandTitle,
   .brandSubTitle,
   .navItem span:last-child,
-  .secondaryAction,
-  .incidentButton {
+  .profileRole,
+  .profileName {
     display: none;
   }
 
-  .shield {
+  .profileAvatar {
     margin: 0 auto;
   }
 
   .brandBlock {
-    justify-content: center;
+    border-bottom: none;
   }
 
   .navItem {
     justify-content: center;
-    border-left: none;
   }
 
   .navItemActive {
-    border-left: none;
-    border-right: 3px solid #56a3ff;
+    border-right: none;
+  }
+
+  .profileFooter {
+    justify-content: center;
+    border-top: none;
   }
 }
 

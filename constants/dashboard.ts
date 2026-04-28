@@ -24,11 +24,11 @@ export type AnomalyItem = {
 };
 
 export const SIDEBAR_ITEMS: SidebarItem[] = [
-  { id: "live", label: "Live Dashboard", icon: "◼", active: true },
-  { id: "inventory", label: "Inventory", icon: "▣" },
-  { id: "alert", label: "Alert Center", icon: "▲" },
-  { id: "deep-dive", label: "Event Deep-Dive", icon: "↺" },
-  { id: "analytics", label: "Analytics", icon: "▤" },
+  { id: "dashboard", label: "Dashboard", icon: "▦", active: true },
+  { id: "monitoring", label: "Monitoring", icon: "◉" },
+  { id: "alerts", label: "Alerts", icon: "△" },
+  { id: "logs", label: "Logs", icon: "▤" },
+  { id: "settings", label: "Settings", icon: "⚙" },
 ];
 
 export const METRIC_STATS: MetricStat[] = [
