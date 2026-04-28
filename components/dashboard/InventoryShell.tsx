@@ -15,7 +15,7 @@ function InventoryShellComponent() {
     <main className={styles.root}>
       <Sidebar items={sidebarItems} activeItemId="inventory" />
       <div className={styles.contentWrap}>
-        <TopBar />
+        <TopBar searchPlaceholder="Search inventory..." />
         <section className={styles.inventoryPageWrap}>
           <header className={styles.inventoryHeader}>
             <div>
