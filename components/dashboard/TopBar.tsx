@@ -1,14 +1,18 @@
 import { UserButton } from "@clerk/nextjs";
 import styles from "@/styles/dashboard.module.css";
 
-export function TopBar() {
+type TopBarProps = {
+  searchPlaceholder?: string;
+};
+
+export function TopBar({ searchPlaceholder = "Search cameras, zones, alerts..." }: TopBarProps) {
   return (
     <header className={styles.topBar}>
       <p className={styles.topBarTitle}>SENTINEL COMMAND</p>
       <div className={styles.searchWrap}>
         <input
           aria-label="Search feeds"
-          placeholder="Search cameras, zones, alerts..."
+          placeholder={searchPlaceholder}
           className={styles.searchInput}
         />
       </div>
