@@ -15,9 +15,9 @@ function DashboardShellComponent() {
 
   return (
     <main className={styles.root}>
-      <Sidebar items={sidebarItems} />
+      <Sidebar items={sidebarItems} activeItemId="dashboard" />
       <div className={styles.contentWrap}>
-        <TopBar />
+        <TopBar searchPlaceholder="Search cameras, zones, alerts..." />
         <section className={styles.mainGrid}>
           <div className={styles.leftColumn}>
             <div className={styles.liveHeader}>

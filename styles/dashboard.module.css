@@ -4,6 +4,7 @@
   grid-template-columns: 260px 1fr;
   background: #090b11;
   color: #eef2ff;
+  font-family: var(--font-geist-sans), "Inter", "Segoe UI", Arial, sans-serif;
 }
 
 .sidebar {
@@ -111,6 +112,7 @@
 .contentWrap {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .topBar {
@@ -175,6 +177,383 @@
   grid-template-columns: 1fr 280px;
   gap: 16px;
   padding: 14px 16px 16px;
+}
+
+.inventoryPageWrap {
+  padding: 18px 18px 20px;
+}
+
+.inventoryHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.inventoryHeader h1 {
+  margin: 0;
+  font-size: 42px;
+}
+
+.inventoryHeader p {
+  margin: 8px 0 0;
+  color: #9aa5bd;
+  font-size: 14px;
+}
+
+.inventoryHeaderActions {
+  display: flex;
+  gap: 10px;
+}
+
+.inventoryGhostButton,
+.inventoryPrimaryButton {
+  height: 36px;
+  border-radius: 7px;
+  padding: 0 14px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.inventoryGhostButton {
+  border: 1px solid #3a4254;
+  background: #141922;
+  color: #d7def1;
+}
+
+.inventoryPrimaryButton {
+  border: 1px solid #6b8ecf;
+  background: #b8ceff;
+  color: #0a1630;
+}
+
+.inventoryPanel {
+  border: 1px solid #30394d;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #171c27 0%, #111620 100%);
+  padding: 12px;
+}
+
+.inventoryFilterBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.inventoryFilters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.inventoryFilterChip {
+  border: 1px solid #38445c;
+  background: #131926;
+  color: #b6c1d8;
+  border-radius: 999px;
+  padding: 7px 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.inventoryFilterChipActive {
+  border-color: #6178a7;
+  background: #1b2434;
+  color: #dce8ff;
+}
+
+.inventoryToolbarButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.inventoryMiniButton {
+  width: 34px;
+  height: 34px;
+  border-radius: 7px;
+  border: 1px solid #374257;
+  background: #141a27;
+  color: #c3cee4;
+}
+
+.inventoryTableWrap {
+  border: 1px solid #2f394d;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.inventoryTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.inventoryTable thead {
+  background: #151a25;
+}
+
+.inventoryTable th,
+.inventoryTable td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #293246;
+  text-align: left;
+}
+
+.inventoryTable th {
+  font-size: 12px;
+  color: #98a4be;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.inventoryTable td {
+  font-size: 13px;
+  color: #dbe4f7;
+}
+
+.inventoryItemTitle {
+  margin: 0;
+  font-weight: 600;
+}
+
+.inventoryItemSub {
+  margin: 3px 0 0;
+  color: #95a1b9;
+  font-size: 12px;
+}
+
+.inventoryRowAlert {
+  background: #261d21;
+}
+
+.inventoryStatus {
+  border-radius: 6px;
+  border: 1px solid;
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.inventoryStatusMatch {
+  color: #7df3ad;
+  border-color: #2f774f;
+  background: #143020;
+}
+
+.inventoryStatusDiscrepancy {
+  color: #ffbcc5;
+  border-color: #7d3943;
+  background: #3b1b21;
+}
+
+.inventoryStatusLow {
+  color: #ffd69d;
+  border-color: #886027;
+  background: #352813;
+}
+
+.inventoryTableFooter {
+  height: 46px;
+  border-top: 1px solid #293246;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  color: #95a1b8;
+  font-size: 13px;
+}
+
+.inventoryPager {
+  display: flex;
+  gap: 8px;
+}
+
+.inventoryPager button {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 1px solid #3a455e;
+  background: #151b28;
+  color: #d0d8eb;
+}
+
+.alertsPageWrap {
+  padding: 18px;
+}
+
+.alertsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.alertsHeader h1 {
+  margin: 0;
+  font-size: 42px;
+}
+
+.alertsHeader p {
+  margin: 7px 0 0;
+  color: #94a1ba;
+  font-size: 14px;
+}
+
+.alertsClearButton {
+  height: 38px;
+  border-radius: 6px;
+  border: 1px solid #3c4455;
+  background: #151a23;
+  color: #d8e0f2;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 0 16px;
+  font-size: 12px;
+}
+
+.alertsList {
+  display: grid;
+  gap: 12px;
+}
+
+.alertCard {
+  border: 1px solid #2f3a4d;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #1b1f2a 0%, #141922 100%);
+  padding: 14px;
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 12px;
+}
+
+.alertCardCritical {
+  border-color: #8a3b45;
+}
+
+.alertCardWarning {
+  border-color: #7d6232;
+}
+
+.alertCardNotice {
+  border-color: #2c7742;
+}
+
+.alertIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  border: 1px solid #3b465f;
+  background: #131926;
+  display: grid;
+  place-items: center;
+  color: #dbe7ff;
+  font-size: 18px;
+}
+
+.alertMain {
+  min-width: 0;
+}
+
+.alertMainTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.alertTitleWrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.alertTitleWrap h3 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.alertBadge {
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.alertBadgeCritical {
+  background: #4a1f26;
+  color: #ffc4ca;
+}
+
+.alertBadgeWarning {
+  background: #4a391f;
+  color: #ffd29a;
+}
+
+.alertBadgeNotice {
+  background: #1e4a2d;
+  color: #aef5c2;
+}
+
+.alertTime {
+  color: #8d99b1;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.alertDetails {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.alertDetailLabel {
+  margin: 0;
+  color: #9aa7c0;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.alertDetailValue {
+  margin: 6px 0 0;
+  color: #e0e7f9;
+  font-size: 14px;
+}
+
+.alertActions {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+.alertActionPrimary,
+.alertActionSecondary {
+  height: 34px;
+  border-radius: 5px;
+  border: 1px solid;
+  padding: 0 12px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.alertActionPrimary {
+  border-color: #8ea8db;
+  background: #b8ccfa;
+  color: #0f2047;
+}
+
+.alertActionSecondary {
+  border-color: #495063;
+  background: #1d2430;
+  color: #d7e2f8;
 }
 
 .leftColumn {
@@ -374,13 +753,15 @@
 
 .panelHeader h3 {
   margin: 0;
-  font-size: 30px;
+  font-size: 22px;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
 }
 
 .metricsGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px;
+  gap: 10px;
 }
 
 .metricCard {
@@ -393,14 +774,17 @@
 .metricCard p {
   margin: 0;
   color: #9ba5bb;
-  font-size: 12px;
+  font-size: 11px;
+  letter-spacing: 0.02em;
 }
 
 .metricCard strong {
-  margin-top: 5px;
+  margin-top: 8px;
   display: block;
-  font-size: 34px;
-  letter-spacing: 0.05em;
+  font-size: 18px;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
 }
 
 .discrepancyCard {
@@ -408,27 +792,33 @@
   border: 1px solid #743841;
   background: linear-gradient(180deg, #2b1318 0%, #231015 100%);
   border-radius: 8px;
-  padding: 10px;
+  padding: 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 10px;
 }
 
 .discrepancyCard p {
   margin: 0;
   color: #f2b3bc;
+  font-size: 13px;
 }
 
 .discrepancyCard strong {
-  margin-top: 5px;
+  margin-top: 6px;
   display: block;
-  font-size: 26px;
+  font-size: 34px;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
 }
 
 .pill {
-  padding: 3px 7px;
+  padding: 4px 8px;
   border-radius: 999px;
-  font-size: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 .pillSuccess {
@@ -450,7 +840,9 @@
   border: none;
   background: transparent;
   color: #b8c6e6;
-  font-size: 11px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
@@ -465,10 +857,11 @@
 .anomalyItem {
   border: 1px solid #2c3448;
   border-radius: 8px;
-  padding: 9px;
+  padding: 10px;
   background: #0e131c;
   display: flex;
-  gap: 8px;
+  gap: 10px;
+  align-items: flex-start;
 }
 
 .anomalyIcon {
@@ -484,15 +877,18 @@
 
 .anomalyTitle {
   margin: 0;
-  font-size: 19px;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 600;
 }
 
 .anomalyMeta {
-  margin-top: 5px;
+  margin-top: 4px;
   color: #95a1bc;
-  font-size: 20px;
+  font-size: 14px;
   display: flex;
-  gap: 8px;
+  gap: 10px;
+  font-variant-numeric: tabular-nums;
 }
 
 @media (max-width: 1200px) {
@@ -547,6 +943,23 @@
 
   .topBarActions {
     justify-content: space-between;
+  }
+
+  .inventoryHeader {
+    flex-direction: column;
+  }
+
+  .alertsHeader {
+    flex-direction: column;
+  }
+
+  .alertDetails {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .alertMainTop {
+    flex-direction: column;
   }
 }
 
