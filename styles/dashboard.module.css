@@ -4,6 +4,7 @@
   grid-template-columns: 260px 1fr;
   background: #090b11;
   color: #eef2ff;
+  font-family: var(--font-geist-sans), "Inter", "Segoe UI", Arial, sans-serif;
 }
 
 .sidebar {
@@ -576,13 +577,15 @@
 
 .panelHeader h3 {
   margin: 0;
-  font-size: 30px;
+  font-size: 22px;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
 }
 
 .metricsGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px;
+  gap: 10px;
 }
 
 .metricCard {
@@ -595,14 +598,17 @@
 .metricCard p {
   margin: 0;
   color: #9ba5bb;
-  font-size: 12px;
+  font-size: 11px;
+  letter-spacing: 0.02em;
 }
 
 .metricCard strong {
-  margin-top: 5px;
+  margin-top: 8px;
   display: block;
-  font-size: 34px;
-  letter-spacing: 0.05em;
+  font-size: 18px;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
 }
 
 .discrepancyCard {
@@ -610,27 +616,33 @@
   border: 1px solid #743841;
   background: linear-gradient(180deg, #2b1318 0%, #231015 100%);
   border-radius: 8px;
-  padding: 10px;
+  padding: 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 10px;
 }
 
 .discrepancyCard p {
   margin: 0;
   color: #f2b3bc;
+  font-size: 13px;
 }
 
 .discrepancyCard strong {
-  margin-top: 5px;
+  margin-top: 6px;
   display: block;
-  font-size: 26px;
+  font-size: 34px;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
 }
 
 .pill {
-  padding: 3px 7px;
+  padding: 4px 8px;
   border-radius: 999px;
-  font-size: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 .pillSuccess {
@@ -652,7 +664,9 @@
   border: none;
   background: transparent;
   color: #b8c6e6;
-  font-size: 11px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
@@ -667,10 +681,11 @@
 .anomalyItem {
   border: 1px solid #2c3448;
   border-radius: 8px;
-  padding: 9px;
+  padding: 10px;
   background: #0e131c;
   display: flex;
-  gap: 8px;
+  gap: 10px;
+  align-items: flex-start;
 }
 
 .anomalyIcon {
@@ -686,15 +701,18 @@
 
 .anomalyTitle {
   margin: 0;
-  font-size: 19px;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 600;
 }
 
 .anomalyMeta {
-  margin-top: 5px;
+  margin-top: 4px;
   color: #95a1bc;
-  font-size: 20px;
+  font-size: 14px;
   display: flex;
-  gap: 8px;
+  gap: 10px;
+  font-variant-numeric: tabular-nums;
 }
 
 @media (max-width: 1200px) {
