@@ -17,14 +17,12 @@ export default async function DashboardPage() {
         </h1>
         <div className="flex items-center gap-3">
           <UserButton afterSignOutUrl="/sign-in" />
-          <SignOutButton>
-            <button
-              type="button"
-              className="rounded-lg border border-zinc-700 px-3 py-2 text-sm transition hover:bg-zinc-900"
-            >
-              Sign out
-            </button>
-          </SignOutButton>
+          <SignOutButton><button
+            type="button"
+            className="rounded-lg border border-zinc-700 px-3 py-2 text-sm transition hover:bg-zinc-900"
+          >
+            Sign out
+          </button></SignOutButton>
         </div>
       </header>
 

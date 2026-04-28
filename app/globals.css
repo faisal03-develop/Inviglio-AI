@@ -24,3 +24,11 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Force email-only display on sign-up page by hiding Clerk phone controls. */
+.signup-email-only .cl-phoneInputBox,
+.signup-email-only .cl-formFieldRow:has(.cl-phoneInputBox),
+.signup-email-only .cl-formField:has(.cl-phoneInputBox),
+.signup-email-only [data-localization-key*="phoneNumber"] {
+  display: none !important;
+}

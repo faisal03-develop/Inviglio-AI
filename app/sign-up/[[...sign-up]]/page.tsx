@@ -2,6 +2,16 @@ import { ClerkLoaded, ClerkLoading, SignUp } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 
+const emailOnlySignUpAppearance = {
+  elements: {
+    // Hide phone-specific fields/buttons so only email sign-up is presented.
+    formFieldRow__phoneNumber: "hidden",
+    formFieldInput__phoneNumber: "hidden",
+    phoneInputBox: "hidden",
+    alternativeMethodsBlockButton__phoneNumber: "hidden",
+  },
+};
+
 export default async function SignUpPage() {
   const { userId } = await auth();
 
@@ -10,7 +20,7 @@ export default async function SignUpPage() {
   }
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-zinc-100 p-4 sm:p-8">
+    <main className="signup-email-only flex min-h-screen items-center justify-center bg-zinc-100 p-4 sm:p-8">
       <div className="w-full max-w-md rounded-2xl border border-zinc-200 bg-white p-4 shadow-lg sm:p-6">
         {/* ClerkLoading provides a clear loading state while auth UI initializes */}
         <ClerkLoading>
@@ -25,6 +35,7 @@ export default async function SignUpPage() {
             routing="path"
             signInUrl="/sign-in"
             forceRedirectUrl="/dashboard"
+            appearance={emailOnlySignUpAppearance}
           />
         </ClerkLoaded>
       </div>
