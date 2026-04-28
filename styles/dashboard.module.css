@@ -194,71 +194,123 @@
   min-height: 365px;
   border-radius: 10px;
   border: 1px solid #2b3345;
-  background:
-    linear-gradient(180deg, #161b28 0%, #10141d 100%),
-    repeating-linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.03) 0,
-      rgba(255, 255, 255, 0.03) 3px,
-      transparent 3px,
-      transparent 120px
-    );
-  position: relative;
-  overflow: hidden;
+  background: #10141d;
+  padding: 10px;
 }
 
-.feedHeader {
+.feedSourceTabs {
   display: flex;
-  gap: 10px;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.sourceTab {
+  flex: 1;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid #2f3747;
+  background: #111620;
+  color: #aeb8cf;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.sourceTabActive {
+  border-color: #595f72;
+  background: #171d2b;
+  color: #e6ebf9;
+}
+
+.uploaderArea {
+  display: flex;
   align-items: center;
+  justify-content: center;
+  min-height: 290px;
+  border: 1px dashed #3a455d;
+  border-radius: 12px;
+  background: #0d1119;
+  cursor: pointer;
+  padding: 16px;
+  text-align: center;
+}
+
+.fileInput {
+  display: none;
+}
+
+.uploadInner p {
+  margin: 0;
+  font-size: 22px;
+  color: #f4f6fb;
+  font-weight: 600;
+}
+
+.uploadInner span {
+  display: block;
+  margin-top: 8px;
+  color: #9ba6bf;
+  font-size: 13px;
+}
+
+.uploadError {
+  margin: 0 0 8px;
+  color: #ffb8bf;
+  font-size: 12px;
+}
+
+.feedPlaceholder {
+  min-height: 290px;
+  border: 1px dashed #3a455d;
+  border-radius: 12px;
+  background: #0d1119;
+  padding: 18px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.feedPlaceholder p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #edf1ff;
+}
+
+.feedPlaceholder span {
+  margin-top: 8px;
+  color: #9ca8c2;
+  font-size: 12px;
+}
+
+.streamLabel {
+  color: #d2daf1;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.streamInput {
+  width: min(500px, 100%);
+  background: #111722;
+  border: 1px solid #2e394f;
+  border-radius: 8px;
   padding: 10px 12px;
+  color: #e5edff;
+  margin-bottom: 10px;
 }
 
-.feedTag {
-  padding: 3px 8px;
-  border-radius: 999px;
-  background: #2b1218;
-  color: #ffb7c1;
-  border: 1px solid #7f2b3e;
-  font-size: 11px;
+.previewWrap {
+  min-height: 290px;
+  border: 1px dashed #3a455d;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #0b0f17;
 }
 
-.feedAiTag {
-  margin-left: auto;
-  background: #121927;
-  border: 1px solid #42516e;
-  padding: 5px 8px;
-  font-size: 11px;
-  border-radius: 6px;
-}
-
-.overlayBoxGreen,
-.overlayBoxAmber {
-  position: absolute;
-  border: 1px solid;
-  background: #0f131daa;
-  font-size: 10px;
-}
-
-.overlayBoxGreen {
-  border-color: #54dc8a;
-  width: 150px;
-  height: 170px;
-  left: 130px;
-  top: 82px;
-}
-
-.overlayBoxAmber {
-  border-color: #f3b26a;
-  width: 170px;
-  height: 130px;
-  left: 295px;
-  top: 130px;
-}
-
-.overlayBoxGreen p,
-.overlayBoxAmber p {
-  margin: 3px 5px;
+.previewMedia {
+  width: 100%;
+  height: 100%;
+  min-height: 290px;
+  object-fit: cover;
 }
 
 .cameraStrip {
