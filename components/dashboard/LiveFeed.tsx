@@ -3,17 +3,13 @@
 import { useEffect, useMemo, useState } from "react";
 import styles from "@/styles/dashboard.module.css";
 
-type SourceMode = "file" | "webcam" | "stream";
-
 const ACCEPTED_VIDEO_TYPES = ["video/mp4", "video/webm", "video/quicktime"];
 const ACCEPTED_IMAGE_TYPES = ["image/jpeg", "image/jpg", "image/png", "image/webp"];
 
 export function LiveFeed() {
-  const [mode, setMode] = useState<SourceMode>("file");
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [previewKind, setPreviewKind] = useState<"video" | "image" | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const [streamUrl, setStreamUrl] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   const hasPreview = useMemo(() => Boolean(previewUrl), [previewUrl]);
@@ -55,33 +51,6 @@ export function LiveFeed() {
   }
 
   function renderContent() {
-    if (mode === "webcam") {
-      return (
-        <div className={styles.feedPlaceholder}>
-          <p>Webcam feed integration point</p>
-          <span>Connect browser camera stream here using `getUserMedia`.</span>
-        </div>
-      );
-    }
-
-    if (mode === "stream") {
-      return (
-        <div className={styles.feedPlaceholder}>
-          <label htmlFor="streamUrl" className={styles.streamLabel}>
-            CCTV Stream URL
-          </label>
-          <input
-            id="streamUrl"
-            className={styles.streamInput}
-            value={streamUrl}
-            onChange={(event) => setStreamUrl(event.target.value)}
-            placeholder="rtsp:// or https:// stream endpoint"
-          />
-          <span>Use this URL for your linked CCTV source.</span>
-        </div>
-      );
-    }
-
     if (isLoading) {
       return <div className={styles.feedPlaceholder}>Loading media preview...</div>;
     }
@@ -117,30 +86,6 @@ export function LiveFeed() {
 
   return (
     <section className={styles.liveFeed}>
-      <div className={styles.feedSourceTabs}>
-        <button
-          type="button"
-          className={`${styles.sourceTab} ${mode === "file" ? styles.sourceTabActive : ""}`}
-          onClick={() => setMode("file")}
-        >
-          File
-        </button>
-        <button
-          type="button"
-          className={`${styles.sourceTab} ${mode === "webcam" ? styles.sourceTabActive : ""}`}
-          onClick={() => setMode("webcam")}
-        >
-          Webcam
-        </button>
-        <button
-          type="button"
-          className={`${styles.sourceTab} ${mode === "stream" ? styles.sourceTabActive : ""}`}
-          onClick={() => setMode("stream")}
-        >
-          Stream
-        </button>
-      </div>
-
       {errorMessage ? <p className={styles.uploadError}>{errorMessage}</p> : null}
       {renderContent()}
     </section>

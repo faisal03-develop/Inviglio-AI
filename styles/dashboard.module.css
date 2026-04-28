@@ -202,29 +202,6 @@
   padding: 10px;
 }
 
-.feedSourceTabs {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 10px;
-}
-
-.sourceTab {
-  flex: 1;
-  height: 34px;
-  border-radius: 8px;
-  border: 1px solid #2f3747;
-  background: #111620;
-  color: #aeb8cf;
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.sourceTabActive {
-  border-color: #595f72;
-  background: #171d2b;
-  color: #e6ebf9;
-}
-
 .uploaderArea {
   display: flex;
   align-items: center;
@@ -327,22 +304,45 @@
   min-height: 88px;
   border-radius: 9px;
   border: 1px solid #2b3346;
-  background: linear-gradient(135deg, #162231 0%, #101622 100%);
+  background: #101622;
   padding: 8px 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.cameraPreview {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(115deg, rgba(87, 139, 214, 0.4) 0%, rgba(19, 32, 54, 0.75) 45%, rgba(16, 23, 36, 0.95) 100%),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.05) 0,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  filter: blur(3px) saturate(0.85);
+  transform: scale(1.08);
+  animation: previewPulse 5.5s ease-in-out infinite alternate;
 }
 
 .cameraCard p {
   margin: 0;
   font-size: 12px;
   font-weight: 600;
+  position: relative;
+  z-index: 1;
 }
 
 .mutedText {
   color: #596785;
   font-size: 11px;
+  position: relative;
+  z-index: 1;
 }
 
 .rightColumn {
@@ -561,5 +561,16 @@
 
   .cameraStrip {
     grid-template-columns: 1fr;
+  }
+}
+
+@keyframes previewPulse {
+  0% {
+    transform: scale(1.08) translateX(-3px);
+    filter: blur(3px) brightness(0.9);
+  }
+  100% {
+    transform: scale(1.1) translateX(3px);
+    filter: blur(4px) brightness(1.05);
   }
 }
