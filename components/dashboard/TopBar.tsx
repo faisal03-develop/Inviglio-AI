@@ -1,4 +1,5 @@
 import { UserButton } from "@clerk/nextjs";
+// import Image from "next/image";
 import styles from "@/styles/dashboard.module.css";
 
 type TopBarProps = {
@@ -8,7 +9,16 @@ type TopBarProps = {
 export function TopBar({ searchPlaceholder = "Search cameras, zones, alerts..." }: TopBarProps) {
   return (
     <header className={styles.topBar}>
-      <p className={styles.topBarTitle}>SENTINEL COMMAND</p>
+      <div className={styles.topBrand}>
+        {/* <Image
+          src="/logo/inviglio2.png"
+          alt="Inviglio AI logo"
+          width={22}
+          height={22}
+          className={styles.topBrandLogo}
+        /> */}
+        <p className={styles.topBarTitle}>Inviglio AI</p>
+      </div>
       <div className={styles.searchWrap}>
         <input
           aria-label="Search feeds"
@@ -29,7 +39,7 @@ export function TopBar({ searchPlaceholder = "Search cameras, zones, alerts..." 
         <button type="button" className={styles.stopButton}>
           Emergency Stop
         </button>
-        <UserButton afterSignOutUrl="/sign-in" />
+        <UserButton />
       </div>
     </header>
   );
