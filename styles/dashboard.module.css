@@ -2,17 +2,17 @@
   min-height: 100vh;
   display: grid;
   grid-template-columns: 260px 1fr;
-  background: #090b11;
-  color: #eef2ff;
-  font-family: var(--font-geist-sans), "Inter", "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(180deg, #f9f7f4 0%, #f6f2ec 100%);
+  color: #2a2a2a;
+  font-family: var(--font-montserrat), "Montserrat", "Segoe UI", Arial, sans-serif;
 }
 
 .sidebar {
-  border-right: 1px solid #1a2030;
-  background: linear-gradient(180deg, #07090f 0%, #04060a 100%);
+  border-right: 1px solid #e4ddd2;
+  background: linear-gradient(180deg, #f8f4ee 0%, #f4efe7 100%);
   display: flex;
   flex-direction: column;
-  padding: 38px 18px 20px;
+  padding: 34px 20px 22px 18px;
   height: 100vh;
   overflow: hidden;
   position: sticky;
@@ -20,22 +20,33 @@
 }
 
 .brandBlock {
-  padding: 6px 6px 24px;
-  border-bottom: 1px solid #19202d;
+  padding: 8px 8px 26px;
+  border-bottom: 1px solid #e6dfd3;
+}
+
+.brandIdentity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brandLogo {
+  border-radius: 8px;
 }
 
 .brandTitle {
   margin: 0;
-  font-size: 32px;
+  font-size: 25px;
   font-weight: 700;
-  color: #78acff;
+  color: #2783D4;
+  letter-spacing: -0.01em;
 }
 
 .brandSubTitle {
-  margin: 6px 0 0;
-  font-size: 12px;
-  letter-spacing: 0.14em;
-  color: #8b8f99;
+  margin: 8px 0 0;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: #8a7f70;
 }
 
 .navList {
@@ -50,16 +61,23 @@
   align-items: center;
   gap: 12px;
   padding: 12px 16px;
-  color: #8e98af;
+  color: #6d685f;
   font-size: 16px;
-  border-radius: 16px;
+  border-radius: 14px;
   border: none;
   background: transparent;
   text-align: left;
+  transition: background-color 180ms ease, transform 180ms ease, color 180ms ease;
+}
+
+.navItem:hover {
+  background: #eee8de;
+  color: #2b2b2b;
+  transform: translateY(-1px);
 }
 
 .navIcon {
-  color: #9aa6bf;
+  color: #9d8b72;
   font-size: 17px;
   width: 24px;
   display: inline-grid;
@@ -67,16 +85,16 @@
 }
 
 .navItemActive {
-  color: #8dc4ff;
+  color: #2783D4;
   font-weight: 600;
-  background: linear-gradient(180deg, #0b1018 0%, #060b14 100%);
-  border: 1px solid #163867;
-  box-shadow: 0 0 18px #0b3e89a1 inset;
+  background: linear-gradient(180deg, #f6efe4 0%, #f0e7d9 100%);
+  border: 1px solid #d8c9b2;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset, 0 7px 20px rgba(86, 72, 46, 0.08);
 }
 
 .profileFooter {
   margin-top: auto;
-  border-top: 1px solid #19202d;
+  border-top: 1px solid #e6dfd3;
   padding: 16px 4px 0;
   display: flex;
   align-items: center;
@@ -87,9 +105,9 @@
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  border: 1px solid #395579;
-  background: radial-gradient(circle at 30% 30%, #2f4f7d 0%, #0b1320 70%);
-  color: #d8e6ff;
+  border: 1px solid #c9b9a0;
+  background: radial-gradient(circle at 30% 30%, #f0d9b8 0%, #d6b588 70%);
+  color: #6a4d2b;
   display: grid;
   place-items: center;
   font-size: 14px;
@@ -99,13 +117,13 @@
 .profileName {
   margin: 0;
   font-size: 16px;
-  color: #f3f6ff;
+  color: #2a2a2a;
   font-weight: 600;
 }
 
 .profileRole {
   margin: 2px 0 0;
-  color: #8994ab;
+  color: #8a7f70;
   font-size: 12px;
 }
 
@@ -117,18 +135,30 @@
 
 .topBar {
   height: 60px;
-  border-bottom: 1px solid #1a2030;
+  border-bottom: 1px solid #e4ddd2;
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 16px;
-  padding: 0 18px;
+  padding: 0 22px 0 18px;
+  background: rgba(255, 253, 249, 0.76);
+  backdrop-filter: blur(5px);
 }
 
 .topBarTitle {
   margin: 0;
-  color: #4f8cff;
+  color: #2783D4;
   font-weight: 700;
+}
+
+.topBrand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.topBrandLogo {
+  border-radius: 6px;
 }
 
 .searchWrap {
@@ -138,12 +168,19 @@
 .searchInput {
   width: 100%;
   max-width: 420px;
-  background: #111620;
-  border: 1px solid #293142;
+  background: #fffcf8;
+  border: 1px solid #d9d1c3;
   border-radius: 6px;
-  color: #d9e2f5;
+  color: #2f2f2f;
   padding: 10px 12px;
   font-size: 13px;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #2783D4;
+  box-shadow: 0 0 0 3px rgba(47, 127, 115, 0.16);
 }
 
 .topBarActions {
@@ -156,27 +193,40 @@
   width: 28px;
   height: 28px;
   border-radius: 6px;
-  border: 1px solid #2c3344;
-  background: #0f131c;
-  color: #bcc9e2;
+  border: 1px solid #d8cfbf;
+  background: #fffaf3;
+  color: #6d675e;
   font-size: 12px;
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.iconButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 16px rgba(103, 88, 60, 0.12);
+  background: #fffdf9;
 }
 
 .stopButton {
   border-radius: 6px;
-  border: 1px solid #7a3131;
-  background: #241416;
-  color: #ffd9d9;
+  border: 1px solid #c06d5e;
+  background: #f4dcd5;
+  color: #74372f;
   padding: 7px 12px;
   font-size: 12px;
   font-weight: 600;
+  transition: transform 180ms ease, background-color 180ms ease;
+}
+
+.stopButton:hover {
+  transform: translateY(-1px);
+  background: #f0d1c8;
 }
 
 .mainGrid {
   display: grid;
   grid-template-columns: 1fr 280px;
   gap: 16px;
-  padding: 14px 16px 16px;
+  padding: 18px 18px 16px 14px;
 }
 
 .inventoryPageWrap {
@@ -198,7 +248,7 @@
 
 .inventoryHeader p {
   margin: 8px 0 0;
-  color: #9aa5bd;
+  color: #7e766a;
   font-size: 14px;
 }
 
@@ -217,21 +267,21 @@
 }
 
 .inventoryGhostButton {
-  border: 1px solid #3a4254;
-  background: #141922;
-  color: #d7def1;
+  border: 1px solid #d8cdbd;
+  background: #fffbf5;
+  color: #4d4a44;
 }
 
 .inventoryPrimaryButton {
-  border: 1px solid #6b8ecf;
-  background: #b8ceff;
-  color: #0a1630;
+  border: 1px solid #d4a069;
+  background: #efc99f;
+  color: #57371f;
 }
 
 .inventoryPanel {
-  border: 1px solid #30394d;
-  border-radius: 10px;
-  background: linear-gradient(180deg, #171c27 0%, #111620 100%);
+  border: 1px solid #ddd3c5;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #fffdf8 0%, #f6f1e8 100%);
   padding: 12px;
 }
 
@@ -250,9 +300,9 @@
 }
 
 .inventoryFilterChip {
-  border: 1px solid #38445c;
-  background: #131926;
-  color: #b6c1d8;
+  border: 1px solid #d8cebf;
+  background: #f7f1e6;
+  color: #5f594f;
   border-radius: 999px;
   padding: 7px 12px;
   font-size: 12px;
@@ -260,9 +310,9 @@
 }
 
 .inventoryFilterChipActive {
-  border-color: #6178a7;
-  background: #1b2434;
-  color: #dce8ff;
+  border-color: #cda46f;
+  background: #f5e3c9;
+  color: #6f451f;
 }
 
 .inventoryToolbarButtons {
@@ -274,13 +324,13 @@
   width: 34px;
   height: 34px;
   border-radius: 7px;
-  border: 1px solid #374257;
-  background: #141a27;
-  color: #c3cee4;
+  border: 1px solid #d9cfbf;
+  background: #fffaf3;
+  color: #746d62;
 }
 
 .inventoryTableWrap {
-  border: 1px solid #2f394d;
+  border: 1px solid #ded5c8;
   border-radius: 8px;
   overflow: hidden;
 }
@@ -291,26 +341,26 @@
 }
 
 .inventoryTable thead {
-  background: #151a25;
+  background: #f7f1e7;
 }
 
 .inventoryTable th,
 .inventoryTable td {
   padding: 12px 10px;
-  border-bottom: 1px solid #293246;
+  border-bottom: 1px solid #e7ddd0;
   text-align: left;
 }
 
 .inventoryTable th {
   font-size: 12px;
-  color: #98a4be;
+  color: #7a7165;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .inventoryTable td {
   font-size: 13px;
-  color: #dbe4f7;
+  color: #35322f;
 }
 
 .inventoryItemTitle {
@@ -320,12 +370,12 @@
 
 .inventoryItemSub {
   margin: 3px 0 0;
-  color: #95a1b9;
+  color: #857d72;
   font-size: 12px;
 }
 
 .inventoryRowAlert {
-  background: #261d21;
+  background: #fff0ec;
 }
 
 .inventoryStatus {
@@ -338,31 +388,31 @@
 }
 
 .inventoryStatusMatch {
-  color: #7df3ad;
-  border-color: #2f774f;
-  background: #143020;
+  color: #2e8b57;
+  border-color: #8cc7a6;
+  background: #e8f7ee;
 }
 
 .inventoryStatusDiscrepancy {
-  color: #ffbcc5;
-  border-color: #7d3943;
-  background: #3b1b21;
+  color: #b54748;
+  border-color: #e2a6a7;
+  background: #fbe9ea;
 }
 
 .inventoryStatusLow {
-  color: #ffd69d;
-  border-color: #886027;
-  background: #352813;
+  color: #9a6728;
+  border-color: #dfc18f;
+  background: #f9f0df;
 }
 
 .inventoryTableFooter {
   height: 46px;
-  border-top: 1px solid #293246;
+  border-top: 1px solid #e7ddd0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 10px;
-  color: #95a1b8;
+  color: #80776a;
   font-size: 13px;
 }
 
@@ -375,13 +425,51 @@
   width: 28px;
   height: 28px;
   border-radius: 6px;
-  border: 1px solid #3a455e;
-  background: #151b28;
-  color: #d0d8eb;
+  border: 1px solid #d8cebf;
+  background: #fff9f3;
+  color: #6f675c;
 }
 
 .alertsPageWrap {
   padding: 18px;
+}
+
+.underDevWrap {
+  min-height: calc(100vh - 60px);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.underDevCard {
+  width: min(680px, 100%);
+  border: 1px solid #ddd3c5;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #fffdf8 0%, #f7f1e8 100%);
+  box-shadow: 0 10px 24px rgba(88, 72, 46, 0.08);
+  padding: 28px 24px;
+}
+
+.underDevEyebrow {
+  margin: 0;
+  color: #2783d4;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.underDevCard h1 {
+  margin: 12px 0 0;
+  font-size: 42px;
+  line-height: 1;
+}
+
+.underDevCard p {
+  margin: 12px 0 0;
+  color: #7e766a;
+  font-size: 15px;
+  line-height: 1.5;
 }
 
 .alertsHeader {
@@ -399,16 +487,16 @@
 
 .alertsHeader p {
   margin: 7px 0 0;
-  color: #94a1ba;
+  color: #7f766a;
   font-size: 14px;
 }
 
 .alertsClearButton {
   height: 38px;
   border-radius: 6px;
-  border: 1px solid #3c4455;
-  background: #151a23;
-  color: #d8e0f2;
+  border: 1px solid #d8cebe;
+  background: #fffaf3;
+  color: #5b574f;
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -422,36 +510,42 @@
 }
 
 .alertCard {
-  border: 1px solid #2f3a4d;
-  border-radius: 10px;
-  background: linear-gradient(180deg, #1b1f2a 0%, #141922 100%);
+  border: 1px solid #dcd2c5;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #fffdf8 0%, #f8f2e9 100%);
   padding: 14px;
   display: grid;
   grid-template-columns: 48px 1fr;
   gap: 12px;
+  transition: transform 180ms ease, box-shadow 220ms ease;
+}
+
+.alertCard:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 11px 24px rgba(96, 77, 47, 0.12);
 }
 
 .alertCardCritical {
-  border-color: #8a3b45;
+  border-left: 3px solid #b54748;
 }
 
 .alertCardWarning {
-  border-color: #7d6232;
+  border-left: 3px solid #c47a2c;
 }
 
 .alertCardNotice {
-  border-color: #2c7742;
+  border-left: 3px solid #2e8b57;
 }
 
 .alertIcon {
   width: 48px;
   height: 48px;
   border-radius: 8px;
-  border: 1px solid #3b465f;
-  background: #131926;
+  border: 1px solid #dccfbd;
+  background: #fff8ef;
   display: grid;
   place-items: center;
-  color: #dbe7ff;
+  color: #7a5f3f;
   font-size: 18px;
 }
 
@@ -487,22 +581,22 @@
 }
 
 .alertBadgeCritical {
-  background: #4a1f26;
-  color: #ffc4ca;
+  background: #f7dddd;
+  color: #b54748;
 }
 
 .alertBadgeWarning {
-  background: #4a391f;
-  color: #ffd29a;
+  background: #f7ecd8;
+  color: #a26825;
 }
 
 .alertBadgeNotice {
-  background: #1e4a2d;
-  color: #aef5c2;
+  background: #e2f2e8;
+  color: #2e8b57;
 }
 
 .alertTime {
-  color: #8d99b1;
+  color: #887f74;
   font-size: 13px;
   font-variant-numeric: tabular-nums;
 }
@@ -516,7 +610,7 @@
 
 .alertDetailLabel {
   margin: 0;
-  color: #9aa7c0;
+  color: #8b8277;
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -524,7 +618,7 @@
 
 .alertDetailValue {
   margin: 6px 0 0;
-  color: #e0e7f9;
+  color: #2f2d2a;
   font-size: 14px;
 }
 
@@ -545,40 +639,44 @@
 }
 
 .alertActionPrimary {
-  border-color: #8ea8db;
-  background: #b8ccfa;
-  color: #0f2047;
+  border-color: #cfa273;
+  background: #efcda8;
+  color: #5d3c22;
 }
 
 .alertActionSecondary {
-  border-color: #495063;
-  background: #1d2430;
-  color: #d7e2f8;
+  border-color: #d8cebe;
+  background: #fff9f3;
+  color: #59544c;
 }
 
 .leftColumn {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .liveHeader h1 {
   margin: 0;
-  font-size: 44px;
+  font-size: 42px;
   line-height: 1;
+  letter-spacing: -0.02em;
+  color: #1f242d;
 }
 
 .liveHeader p {
-  margin: 7px 0 0;
-  color: #93a0b8;
+  margin: 10px 0 0;
+  color: #7e766a;
+  line-height: 1.45;
 }
 
 .liveFeed {
   min-height: 365px;
-  border-radius: 10px;
-  border: 1px solid #2b3345;
-  background: #10141d;
-  padding: 10px;
+  border-radius: 14px;
+  border: 1px solid #ddd4c6;
+  background: linear-gradient(180deg, #fffdf8 0%, #f5f0e8 100%);
+  padding: 12px;
+  box-shadow: 0 8px 24px rgba(81, 67, 45, 0.08);
 }
 
 .uploaderArea {
@@ -586,9 +684,9 @@
   align-items: center;
   justify-content: center;
   min-height: 290px;
-  border: 1px dashed #3a455d;
+  border: 1px dashed #c7b9a3;
   border-radius: 12px;
-  background: #0d1119;
+  background: #faf6ef;
   cursor: pointer;
   padding: 16px;
   text-align: center;
@@ -601,20 +699,20 @@
 .uploadInner p {
   margin: 0;
   font-size: 22px;
-  color: #f4f6fb;
+  color: #2a2a2a;
   font-weight: 600;
 }
 
 .uploadInner span {
   display: block;
   margin-top: 8px;
-  color: #9ba6bf;
+  color: #857b6f;
   font-size: 13px;
 }
 
 .uploadError {
   margin: 0 0 8px;
-  color: #ffb8bf;
+  color: #b54748;
   font-size: 12px;
 }
 
@@ -660,10 +758,10 @@
 
 .previewWrap {
   min-height: 290px;
-  border: 1px dashed #3a455d;
+  border: 1px dashed #cabba7;
   border-radius: 12px;
   overflow: hidden;
-  background: #0b0f17;
+  background: #f3ede2;
 }
 
 .previewMedia {
@@ -681,22 +779,28 @@
 
 .cameraCard {
   min-height: 88px;
-  border-radius: 9px;
-  border: 1px solid #2b3346;
-  background: #101622;
+  border-radius: 12px;
+  border: 1px solid #ddd4c7;
+  background: #fffdf9;
   padding: 8px 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
   overflow: hidden;
+  transition: transform 180ms ease, box-shadow 220ms ease;
+}
+
+.cameraCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(84, 71, 49, 0.1);
 }
 
 .cameraPreview {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(115deg, rgba(87, 139, 214, 0.4) 0%, rgba(19, 32, 54, 0.75) 45%, rgba(16, 23, 36, 0.95) 100%),
+    linear-gradient(115deg, rgba(208, 170, 120, 0.32) 0%, rgba(161, 186, 178, 0.42) 45%, rgba(248, 241, 230, 0.78) 100%),
     repeating-linear-gradient(
       0deg,
       rgba(255, 255, 255, 0.05) 0,
@@ -711,14 +815,14 @@
 
 .cameraCard p {
   margin: 0;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   position: relative;
   z-index: 1;
 }
 
 .mutedText {
-  color: #596785;
+  color: #8f8578;
   font-size: 11px;
   position: relative;
   z-index: 1;
@@ -733,22 +837,23 @@
 .onlineStatus {
   margin: 0;
   align-self: flex-end;
-  color: #72f7a2;
+  color: #2e8b57;
   font-size: 12px;
 }
 
 .panel {
-  border-radius: 10px;
-  border: 1px solid #2b3346;
-  background: linear-gradient(180deg, #191d29 0%, #131722 100%);
-  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid #ddd3c5;
+  background: linear-gradient(180deg, #fffdf9 0%, #f8f2e8 100%);
+  padding: 14px 12px;
+  box-shadow: 0 10px 24px rgba(88, 72, 46, 0.08);
 }
 
 .panelHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .panelHeader h3 {
@@ -765,15 +870,21 @@
 }
 
 .metricCard {
-  border: 1px solid #2f3749;
-  border-radius: 8px;
-  background: #0f131d;
-  padding: 10px;
+  border: 1px solid #ddd3c5;
+  border-radius: 11px;
+  background: #fffaf3;
+  padding: 11px 10px 10px;
+  transition: transform 180ms ease, box-shadow 220ms ease;
+}
+
+.metricCard:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 16px rgba(103, 87, 59, 0.12);
 }
 
 .metricCard p {
   margin: 0;
-  color: #9ba5bb;
+  color: #7f766b;
   font-size: 11px;
   letter-spacing: 0.02em;
 }
@@ -789,8 +900,8 @@
 
 .discrepancyCard {
   margin-top: 10px;
-  border: 1px solid #743841;
-  background: linear-gradient(180deg, #2b1318 0%, #231015 100%);
+  border: 1px solid #e0b0a5;
+  background: linear-gradient(180deg, #fff2ef 0%, #fbe7e2 100%);
   border-radius: 8px;
   padding: 12px;
   display: flex;
@@ -801,7 +912,7 @@
 
 .discrepancyCard p {
   margin: 0;
-  color: #f2b3bc;
+  color: #9c4f4f;
   font-size: 13px;
 }
 
@@ -822,28 +933,33 @@
 }
 
 .pillSuccess {
-  background: #1a402c;
-  color: #9ef3c0;
+  background: #e3f3e9;
+  color: #2e8b57;
 }
 
 .pillDanger {
-  background: #56242c;
-  color: #ffc3cc;
+  background: #f7dddd;
+  color: #b54748;
 }
 
 .pillNeutral {
-  background: #1e2737;
-  color: #d4def2;
+  background: #ebf0f0;
+  color: #4a5e5a;
 }
 
 .viewAll {
   border: none;
   background: transparent;
-  color: #b8c6e6;
+  color: #2783D4;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  transition: color 180ms ease;
+}
+
+.viewAll:hover {
+  color: #25675d;
 }
 
 .anomalyList {
@@ -855,21 +971,27 @@
 }
 
 .anomalyItem {
-  border: 1px solid #2c3448;
-  border-radius: 8px;
+  border: 1px solid #dcd3c5;
+  border-radius: 12px;
   padding: 10px;
-  background: #0e131c;
+  background: #fffaf4;
   display: flex;
   gap: 10px;
   align-items: flex-start;
+  transition: transform 180ms ease, box-shadow 220ms ease;
+}
+
+.anomalyItem:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 9px 18px rgba(92, 74, 45, 0.1);
 }
 
 .anomalyIcon {
   width: 20px;
   height: 20px;
   border-radius: 6px;
-  border: 1px solid #505f82;
-  color: #9eafcf;
+  border: 1px solid #cebda4;
+  color: #7b674f;
   display: grid;
   place-items: center;
   font-size: 10px;
@@ -884,7 +1006,7 @@
 
 .anomalyMeta {
   margin-top: 4px;
-  color: #95a1bc;
+  color: #7c7266;
   font-size: 14px;
   display: flex;
   gap: 10px;
