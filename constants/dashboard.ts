@@ -62,8 +62,8 @@ export const SIDEBAR_ITEMS: SidebarItem[] = [
   { id: "dashboard", label: "Dashboard", icon: "▦", active: true, href: "/dashboard" },
   { id: "inventory", label: "Inventory", icon: "◉", href: "/inventory" },
   { id: "alerts", label: "Alerts", icon: "△", href: "/alerts" },
-  { id: "logs", label: "Logs", icon: "▤", href: "/dashboard" },
-  { id: "settings", label: "Settings", icon: "⚙", href: "/dashboard" },
+  { id: "logs", label: "Logs", icon: "▤", href: "/logs" },
+  { id: "settings", label: "Settings", icon: "⚙", href: "/settings" },
 ];
 
 export const METRIC_STATS: MetricStat[] = [
