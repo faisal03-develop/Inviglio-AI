@@ -58,13 +58,6 @@ export async function POST(request: Request) {
   } catch (err) {
     const message = err instanceof Error ? err.message : "Workflow request failed.";
 
-    if (message.includes("ROBOFLOW_API_KEY")) {
-      return NextResponse.json(
-        { error: "Roboflow is not configured on the server.", code: "CONFIG_ERROR" },
-        { status: 503 },
-      );
-    }
-
     return NextResponse.json(
       { error: message, code: "VALIDATION_ERROR" },
       { status: 400 },
