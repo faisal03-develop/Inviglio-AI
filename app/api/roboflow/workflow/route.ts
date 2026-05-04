@@ -30,17 +30,24 @@ export async function POST(request: Request) {
 
   try {
     const body = parseWorkflowBody(json);
-    const upstream = await callRoboflowWorkflow(body);
-    const text = await upstream.text();
-
-    let payload: unknown = text;
     try {
-      payload = text.length ? JSON.parse(text) : null;
-    } catch {
-      payload = { raw: text };
-    }
+      const upstream = await callRoboflowWorkflow(body);
+      const text = await upstream.text();
 
-    return NextResponse.json(payload, { status: upstream.status });
+      let payload: unknown = text;
+      try {
+        payload = text.length ? JSON.parse(text) : null;
+      } catch {
+        payload = { raw: text };
+      }
+
+      return NextResponse.json(payload, { status: upstream.status });
+    } catch {
+      return NextResponse.json(
+        { error: "Roboflow workflow request failed.", code: "UPSTREAM_ERROR" },
+        { status: 502 },
+      );
+    }
   } catch (err) {
     const message = err instanceof Error ? err.message : "Workflow request failed.";
 
