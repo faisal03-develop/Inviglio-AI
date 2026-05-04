@@ -15,11 +15,11 @@ async function safeJson(response: Response): Promise<unknown> {
 }
 
 function isErrorEnvelope(value: unknown): value is { error: string; code?: string } {
+  if (value === null || typeof value !== "object") {
+    return false;
+  }
   return (
-    Boolean(value) &&
-    typeof value === "object" &&
-    "error" in value &&
-    typeof (value as { error: unknown }).error === "string"
+    "error" in value && typeof (value as { error: unknown }).error === "string"
   );
 }
 
