@@ -42,7 +42,14 @@ export async function POST(request: Request) {
       }
 
       return NextResponse.json(payload, { status: upstream.status });
-    } catch {
+    } catch (nested) {
+      const nestedMessage = nested instanceof Error ? nested.message : "";
+      if (nestedMessage.includes("ROBOFLOW_API_KEY")) {
+        return NextResponse.json(
+          { error: "Roboflow is not configured on the server.", code: "CONFIG_ERROR" },
+          { status: 503 },
+        );
+      }
       return NextResponse.json(
         { error: "Roboflow workflow request failed.", code: "UPSTREAM_ERROR" },
         { status: 502 },
