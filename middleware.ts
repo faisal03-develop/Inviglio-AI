@@ -1,6 +1,6 @@
 import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 
-const isProtectedRoute = createRouteMatcher(["/dashboard(.*)"]);
+const isProtectedRoute = createRouteMatcher(["/dashboard(.*)", "/product-detector(.*)"]);
 
 // Protect dashboard routes while keeping auth pages publicly accessible.
 export default clerkMiddleware(async (auth, req) => {
