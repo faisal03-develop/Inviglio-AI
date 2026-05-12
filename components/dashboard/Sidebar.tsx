@@ -23,6 +23,7 @@ export function Sidebar({ items, activeItemId = "dashboard" }: SidebarProps) {
             height={50}
             className={styles.brandLogo}
             priority
+            style={{ width: "auto", height: "auto" }}
           />
           {/* <p className={styles.brandTitle}>Inviglio AI</p> */}
         </div>

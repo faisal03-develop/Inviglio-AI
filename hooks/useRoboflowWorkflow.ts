@@ -1,16 +1,18 @@
 "use client";
 
 import { useCallback, useState } from "react";
-import { runRoboflowWorkflow } from "@/lib/roboflow/client";
+import { runRoboflowWorkflow, runRoboflowWorkflowUpload } from "@/lib/roboflow/client";
 import type { RoboflowWorkflowResponse } from "@/lib/roboflow/types";
 import { RoboflowClientError } from "@/lib/roboflow/types";
 import type { RunWorkflowRequestBody } from "@/lib/roboflow/types";
+
+export type WorkflowRunInput = RunWorkflowRequestBody | File;
 
 export type UseRoboflowWorkflowState = {
   data: RoboflowWorkflowResponse | null;
   error: string | null;
   isLoading: boolean;
-  run: (body: RunWorkflowRequestBody) => Promise<RoboflowWorkflowResponse | null>;
+  run: (input: WorkflowRunInput) => Promise<RoboflowWorkflowResponse | null>;
   reset: () => void;
 };
 
@@ -24,12 +26,15 @@ export function useRoboflowWorkflow(): UseRoboflowWorkflowState {
     setError(null);
   }, []);
 
-  const run = useCallback(async (body: RunWorkflowRequestBody) => {
+  const run = useCallback(async (input: WorkflowRunInput) => {
     setIsLoading(true);
     setError(null);
 
     try {
-      const result = await runRoboflowWorkflow(body);
+      const result =
+        input instanceof File
+          ? await runRoboflowWorkflowUpload(input)
+          : await runRoboflowWorkflow(input);
       setData(result);
       return result;
     } catch (err) {
