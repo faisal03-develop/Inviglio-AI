@@ -17,7 +17,15 @@ export type RunWorkflowRequestBody = {
  * Workflow output is defined by your Roboflow graph; we keep the envelope loose
  * and narrow at call sites when you know your schema.
  */
-export type RoboflowWorkflowResponse = Record<string, unknown>;
+/** Normalized payload returned by `/api/roboflow/workflow` on success. */
+export type WorkflowProxySuccess = {
+  success: true;
+  count: number | null;
+  predictions: unknown[];
+  annotatedImage: string | null;
+};
+
+export type RoboflowWorkflowResponse = WorkflowProxySuccess | Record<string, unknown>;
 
 export type RoboflowClientErrorCode =
   | "VALIDATION_ERROR"
