@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ui } from "@clerk/ui";
+import { WorkflowMetricsProvider } from "@/contexts/WorkflowMetricsContext";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -27,7 +28,7 @@ export default function RootLayout({
       >
         {/* suppressHydrationWarning: browser extensions (e.g. ColorZilla) inject attributes like cz-shortcut-listen on <body> */}
         <body className="min-h-full flex flex-col" suppressHydrationWarning>
-          {children}
+          <WorkflowMetricsProvider>{children}</WorkflowMetricsProvider>
         </body>
       </html>
     </ClerkProvider>
