@@ -5,6 +5,7 @@ import { INVENTORY_FILTERS, INVENTORY_ROWS } from "@/constants/dashboard";
 import { Sidebar } from "@/components/dashboard/Sidebar";
 import { TopBar } from "@/components/dashboard/TopBar";
 import { useDashboardData } from "@/hooks/useDashboardData";
+import { InventoryMetricsPanel } from "@/components/dashboard/InventoryMetricsPanel";
 import { InventoryTable } from "@/components/dashboard/InventoryTable";
 import styles from "@/styles/dashboard.module.css";
 
@@ -31,6 +32,10 @@ function InventoryShellComponent() {
               </button>
             </div>
           </header>
+
+          <div className={styles.inventoryMetricsWrap}>
+            <InventoryMetricsPanel />
+          </div>
 
           <section className={styles.inventoryPanel}>
             <div className={styles.inventoryFilterBar}>
