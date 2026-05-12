@@ -23,18 +23,13 @@ function isErrorEnvelope(value: unknown): value is { error: string; code?: strin
   );
 }
 
-/**
- * Runs the workflow via the Next.js API route (credentials included for Clerk session).
- */
-export async function runRoboflowWorkflow(
-  body: RunWorkflowRequestBody,
+async function postWorkflowAndParse(
+  init: RequestInit,
 ): Promise<RoboflowWorkflowResponse> {
   let response: Response;
   try {
     response = await fetch("/api/roboflow/workflow", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body),
+      ...init,
       credentials: "same-origin",
     });
   } catch {
@@ -71,4 +66,29 @@ export async function runRoboflowWorkflow(
   }
 
   return data as RoboflowWorkflowResponse;
+}
+
+/**
+ * Runs the workflow via the Next.js API route (credentials included for Clerk session).
+ */
+export async function runRoboflowWorkflow(
+  body: RunWorkflowRequestBody,
+): Promise<RoboflowWorkflowResponse> {
+  return postWorkflowAndParse({
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+}
+
+/**
+ * Uploads an image file as multipart/form-data; the server converts to base64 and calls Roboflow.
+ */
+export async function runRoboflowWorkflowUpload(file: File): Promise<RoboflowWorkflowResponse> {
+  const formData = new FormData();
+  formData.append("image", file);
+  return postWorkflowAndParse({
+    method: "POST",
+    body: formData,
+  });
 }

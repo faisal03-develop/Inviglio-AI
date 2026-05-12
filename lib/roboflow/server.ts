@@ -3,8 +3,16 @@ import { fetchWithRetry } from "@/lib/roboflow/retry";
 import type { RunWorkflowRequestBody } from "@/lib/roboflow/types";
 
 function getWorkflowUrl(): string {
-  const url = process.env.ROBOFLOW_WORKFLOW_URL?.trim();
-  return url && url.length > 0 ? url : DEFAULT_WORKFLOW_URL;
+  const explicit = process.env.ROBOFLOW_WORKFLOW_URL?.trim();
+  if (explicit) {
+    return explicit;
+  }
+  const workspace = process.env.ROBOFLOW_WORKSPACE?.trim();
+  const workflow = process.env.ROBOFLOW_WORKFLOW?.trim();
+  if (workspace && workflow) {
+    return `https://serverless.roboflow.com/infer/workflows/${workspace}/${workflow}`;
+  }
+  return DEFAULT_WORKFLOW_URL;
 }
 
 function getApiKey(): string {
